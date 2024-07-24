@@ -1,0 +1,9 @@
+{
+	"name": "deloittedenmarkfabric",
+	"location": "northeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "0c1938a6-41a1-4ecd-a88a-faaabec45ba8",
+		"tenantId": "36da45f1-dd2c-4d1f-af13-5abe46b99921"
+	}
+}
