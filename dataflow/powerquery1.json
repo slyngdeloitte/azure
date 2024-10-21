@@ -3,7 +3,18 @@
 	"properties": {
 		"type": "WranglingDataFlow",
 		"typeProperties": {
-			"sources": []
+			"sources": [
+				{
+					"name": "Parquet2",
+					"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tformat: 'parquet') ~>  Parquet2",
+					"dataset": {
+						"referenceName": "Parquet2",
+						"type": "DatasetReference"
+					}
+				}
+			],
+			"script": "section Section1;\r\nshared Parquet2 = let AdfDoc = AzureStorage.DataLakeContents(\"https://deloittedenmark.dfs.core.windows.net/data/DSV/I_BILLINGDOCUMENT/initial/part-AIUQiw2JBNt1MJ_O-nOsUiycHKwyuWhuB.parquet\"), Parquet = Parquet.Document(AdfDoc) in Parquet;\r\nshared UserQuery = let Source = #\"Parquet2\" in Source;\r\n",
+			"documentLocale": "en-us"
 		}
 	}
 }
