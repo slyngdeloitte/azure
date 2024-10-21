@@ -1,5 +1,5 @@
 {
-	"name": "powerquery1",
+	"name": "BillingQ",
 	"properties": {
 		"type": "WranglingDataFlow",
 		"typeProperties": {
